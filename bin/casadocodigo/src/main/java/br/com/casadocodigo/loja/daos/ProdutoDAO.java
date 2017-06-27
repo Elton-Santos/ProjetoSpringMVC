@@ -29,9 +29,8 @@ public class ProdutoDAO {
 
 
 	public Produto find(Integer id) {
-		return manager.createQuery("SELECT distinct(p) FROM Produto p "
-				+ "join fetch p.precos preco where p.id= :id", Produto.class)
+		return manager.createQuery("select distinct(p) from Produto p join fetch p.precos precos where p.id = :id", Produto.class)
 				.setParameter("id", id)
 				.getSingleResult();
 	}
-}
+}	
