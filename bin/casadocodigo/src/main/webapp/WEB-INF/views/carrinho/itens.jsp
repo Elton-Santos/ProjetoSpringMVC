@@ -87,7 +87,7 @@
 			          		value="${carrinhoCompras.getQuantidade(item) }"/></td>
 			          <td class="numeric-cell">${carrinhoCompras.getTotal(item) }</td>
 			          <td class="remove-item">
-			          <form action="" method="post">
+			          <form action="${s:mvcUrl('CCC#remover').arg(0, item.produto.id).arg(1, item.tipoPreco).build() }" method="post">
 			          	<input type="image" 
 			          		src="${contextPath }resources/imagens/excluir.png" alt="Excluir" title="Excluir" />
 			          	</form>
@@ -97,7 +97,10 @@
 		      </tbody>
 			      <tfoot>
 			        <tr>
-			          <td colspan="3"><input type="submit" class="checkout" name="checkout" value="Finalizar compra" /></td>
+			          <td colspan="3">
+			          	<form action="${s:mvcUrl('PC#finalizar').build() }" method="post">
+			          		<input type="submit" class="checkout" name="checkout" value="Finalizar compra" /></td>
+			          	</form>
 			          <td class="quantity-input-cell"><input type="submit" class="update-cart" disabled="disabled" name="update" value=""/></td>
 			          <td class="numeric-cell">${carrinhoCompras.total }</td><td></td>
 			        </tr>
@@ -124,8 +127,7 @@
 				<p class="footer-title">Coleções de Programação</p>
 				<ul class="footer-text-links">
 					<li><a href="/collections/livros-de-java">Java</a></li>
-					<li><a href="/collections/livros-desenvolvimento-web">Desenvolvimento
-							Web</a></li>
+					<li><a href="/collections/livros-desenvolvimento-web">Desenvolvimento Web</a></li>
 					<li><a href="/collections/livros-de-mobile">Mobile</a></li>
 					<li><a href="/collections/games">Games</a></li>
 					<li><a href="/collections/livros-de-front-end">Front End</a></li>

@@ -71,5 +71,6 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		super.addResourceHandlers(registry);
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
+	
 
 }
