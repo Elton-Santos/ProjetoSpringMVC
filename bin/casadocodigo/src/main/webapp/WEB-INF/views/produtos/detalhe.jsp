@@ -53,7 +53,6 @@
 						</li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
-
 						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
 					</ul>
 				</nav>
@@ -107,7 +106,7 @@
 	        <c:forEach items="${produto.precos	}" var="preco">
 	          <li class="buy-option">
 	          	<input type="hidden" name="produtoId" value="${produto.id}" />
-	            <input type="radio" name="tipo" class="variant-radio" id="tipo" value="${preco.tipo}"  checked="checked"  />
+	            <input type="radio" name="tipoPreco" class="variant-radio" id="tipo" value="${preco.tipo}"  checked="checked"  />
 	            <label  class="variant-label">
 	              ${preco.tipo} 
 	            </label>
